@@ -6,12 +6,14 @@ public class Singleton {
 
     private static Singleton instancia = null;
 
-    private Singleton() {
+    private Singleton(String autor, String titulo) {
+        this.autor = autor;
+        this.titulo = titulo;
     }
 
-    public static Singleton getInstance() {
+    public static Singleton getInstance(String autor, String titulo) {
         if (instancia == null) {
-            instancia = new Singleton();
+            instancia = new Singleton(autor, titulo);
             return instancia;
         }
         return instancia;
@@ -29,9 +31,10 @@ public class Singleton {
         return instancia;
     }
      */
-    
-    public void mostrar() {
-        System.out.println("Singleton{: autor " + autor + " titulo: " + titulo);
+
+    @Override
+    public String toString() {
+        return "Singleton{ " + "autor: " + autor + ", titulo: " + titulo + '}';
     }
 
     public void setAutor(String autor) {
@@ -41,4 +44,13 @@ public class Singleton {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+    
 }
