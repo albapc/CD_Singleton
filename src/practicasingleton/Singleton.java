@@ -24,7 +24,9 @@ public class Singleton {
     /*
     private static final Singleton instancia = new Singleton();
 
-    private Singleton() {
+    private Singleton(Strin autor, String titulo) {
+        this.autor = autor;
+        this.titulo = titulo;
     }
 
     public static Singleton getInstance() {
